@@ -1,0 +1,17 @@
+{
+  "name": "@flinbein/rollup-plugin-varhub-bundle",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./index.js",
+  "typings": "./index.t.ts",
+  "license": "MIT",
+  "author": "dpohvar@gmail.com",
+  "dependencies": {
+    "esbuild": "^0.24.0",
+    "@flinbein/json-stable-hash": "github:flinbein/json-stable-hash"
+  },
+  "devDependencies": {
+    "rollup": "^4.24.4",
+    "@types/node": "^22.9.0"
+  }
+}
