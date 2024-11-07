@@ -1,6 +1,6 @@
 # Install
 ```shell
-npm install github:flinbein/rollup-plugin-varhub-bundl
+npm install github:flinbein/rollup-plugin-varhub-bundle
 ```
 
 # Description
