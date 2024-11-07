@@ -1,3 +1,3 @@
 /// <reference path="./modules.d.ts" />
-import { Plugin } from "esbuild"
-export default function rollupPluginVarhubBundle(): Plugin;
+import { Plugin, BuildOptions } from "esbuild"
+export default function rollupPluginVarhubBundle(options?: BuildOptions): Plugin;

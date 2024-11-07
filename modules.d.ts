@@ -5,6 +5,6 @@ declare module "*?varhub-bundle:module" {
 	export {module as default} from "*?varhub-bundle"
 }
 declare module "*?varhub-bundle" {
-	export const module: {main: string, source: Record<string, string>};
+	export const module: {main: "index.js", source: {"index.js": string}};
 	export const integrity: string;
 }
