@@ -5,14 +5,14 @@ npm install github:flinbein/rollup-plugin-varhub-bundle
 
 # Description
 
-The plugin is used to compile typescript code for a varhub VM and calculate the integrity.
+The plugin is used to compile typescript code for a [varhub](https://github.com/flinbein/varhub-web-client#readme) VM and calculate the integrity.
 
 # Configuration
 <table>
 <tr>
 <td>
 
-**Vite**
+[**Vite**](https://vite.dev/)
 </td>
 <td>
 
@@ -31,7 +31,7 @@ export default {
 <tr>
 <td>
 
-**Rollup**
+[**Rollup**](https://rollupjs.org/)
 </td>
 <td>
 
@@ -52,7 +52,9 @@ export default {
 </tr>
 </table>
 
-You can pass additional options to plugin: `varhubBundlePlugin(options)`. See [ESBuild options](https://esbuild.github.io/api/#general-options)
+You can pass additional options to plugin: `varhubBundlePlugin(options)`.
+See [ESBuild options](https://esbuild.github.io/api/#general-options).
+These rules will only apply to building code for the varhub VM.
 
 # Usage
 
