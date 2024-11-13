@@ -44,8 +44,19 @@ export default function rollupPluginVarhubBundle(options) {
 					});
 
 					const basePath = path.dirname(buildResult.outputFiles[0].path);
-					const deps = Object.keys(buildResult.metafile.inputs).map(input => path.resolve(basePath, input))
-					for (const dep of deps) this.addWatchFile(dep);
+					const deps = Object.keys(buildResult.metafile.inputs).map(input => {
+						const match = input.match(/^[a-zA-Z-]{2,}:(.*)/);
+						if (match) return match[1];
+						return path.resolve(basePath, input);
+					});
+					await Promise.all([...new Set(deps)].map(async (dep) => {
+						const resolveResult = await this.resolve(dep);
+						if (resolveResult?.id) {
+							this.addWatchFile(resolveResult.id);
+						} else {
+							this.warn(`unknown dependency ${JSON.stringify(dep)} will not be tracked.`);
+						}
+					}));
 					const module = {
 						main: "index.js",
 						source: {"index.js": buildResult.outputFiles[0].text}
